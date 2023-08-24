@@ -64,3 +64,29 @@ words[i].length <= maxWidth
 
 EXPLAINATION BELOW - 
 
+Initialization: We start by preparing an empty list (vector) named result which will hold our final formatted lines. We also set startIndex to 0, indicating that we're going to start formatting the words from the beginning.
+
+Loop through Words: We go through each word in the list of words.
+
+Creating a Line: For each word, we start building a line of text. We calculate the length of the word, and then we move to the next word by incrementing endIndex.
+
+Check Line Length: We keep adding words to the line until we reach a point where adding the next word would make the line too long (beyond the maxWidth). When this happens, we stop adding words and move to the next step.
+
+Distributing Spaces: Now that we have a line with words that can fit within the maximum width, we calculate the number of spaces we need to distribute between these words to make the line reach the desired width (maxWidth).
+
+Handling Single Words and Last Line: If the line contains only one word or if it's the last line, we left-align the words by adding extra spaces to the right until the line reaches the desired width. This ensures the word is flush with the left side.
+
+Distributing Spaces Evenly: If the line has multiple words and it's not the last line, we calculate the base number of spaces to insert between each word, and then we distribute any extra spaces as evenly as possible, with the left words getting more extra spaces if needed. This ensures the line looks balanced.
+
+Building the Line: We build the final line by appending words and spaces as required based on the conditions above.
+
+Adding to Result: The formatted line is added to the result vector.
+
+Moving to Next Line: We update startIndex to the value of endIndex, indicating that the next line starts from where the previous line ended.
+
+Repeat the Process: We keep repeating this process until we have gone through all the words in the list.
+
+Return Result: Finally, we return the result vector, which contains all the formatted lines.
+
+
+
